@@ -1,3 +1,7 @@
+/* ==========================================================================
+   Released Under the MIT Licence -- http://opensource.org/licenses/MIT
+   ========================================================================== */
+
 var counter, minutes, second, seconds; // "second" is the interval and "seconds" is part of the secToMin(); function
 
 //-------------------- Time Unit Conversion Code ------------------------------------------------//
