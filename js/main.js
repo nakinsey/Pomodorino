@@ -44,7 +44,8 @@ var timer = function () {
 };
 
 var startTimer = function () {
-    "use strict";
+    "use strict"; 
+    window.clearInterval(second); // To ensure that there is only one timer running, cancel any previous ones.
     second = window.setInterval("timer()", 1000);
 };
 
