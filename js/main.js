@@ -54,6 +54,7 @@ var startTimer = function () {
 var pomodorino = function () {
     "use strict";
     counter = 1500; // 25 Minutes
+    $("title, #time").text(secToMin(counter));
     startTimer();
     $("#start").css("display", "none");
     $("#stop").css("display", "inline");
@@ -62,6 +63,7 @@ var pomodorino = function () {
 var shortBreak = function () {
     "use strict";
     counter = 300; // 5 Minutes
+    $("title, #time").text(secToMin(counter));
     startTimer();
     $("#start").css("display", "none");
     $("#stop").css("display", "inline");
@@ -70,6 +72,7 @@ var shortBreak = function () {
 var longBreak = function () {
     "use strict";
     counter = 900; // 15 Minutes
+    $("title, #time").text(secToMin(counter));
     startTimer();
     $("#start").css("display", "none");
     $("#stop").css("display", "inline");
