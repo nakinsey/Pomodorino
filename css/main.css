@@ -9,22 +9,18 @@ select,
 textarea {
     color: #222;
 }
-
 body {
     font-size: 1em;
     line-height: 1.4;
 }
-
-::-moz-selection {
+: : -moz-selection {
     background: #b3d4fc;
     text-shadow: none;
 }
-
-::selection {
+: : selection {
     background: #b3d4fc;
     text-shadow: none;
 }
-
 hr {
     display: block;
     height: 1px;
@@ -33,51 +29,92 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
 img {
     vertical-align: middle;
 }
-
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
-
 textarea {
     resize: vertical;
 }
-
 .chromeframe {
     margin: 0.2em 0;
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
 }
-
-
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+html {
+    background-color: #F0F0F0;
+}
+.center {
+    margin: auto;
+    text-align: center;
+}
+#app {
+    margin-top: 100px;
+}
+button {
+    background-color: #333;
+    border: none;
+    border-radius: 2px;
+    color: #FFF;
+    margin-right: 1em;
+    padding: 16px 24px;
+    padding: 1.6rem 2.4rem;
+    text-transform: uppercase;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+    width: auto;
+}
+button:last-of-type {
+    margin-right: 0;
+}
+button:hover {
+    background-color: #475BFF;
+}
+.select button {
+    margin-bottom: 2rem;
+}
+.control button {
+    margin-top: 2rem;
+}
+.time {
+    font-size: 5rem;
+}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-
+@media only screen and (max-width: 630px) {
+    .select button {
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
+        width: 75%;
+    }
+    .select {
+        margin-bottom: 50px;
+    }
+    .control {
+        margin-top: 30px;
+    }
+    #app {
+    margin-top: 10px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    button {
+        margin: auto;
+        margin-bottom: 10px;
+        width: 75%;
+    }
 }

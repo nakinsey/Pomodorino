@@ -2,7 +2,8 @@
    Released Under the MIT Licence -- http://opensource.org/licenses/MIT
    ========================================================================== */
 
-var counter, minutes, second, seconds; // "second" is the interval and "seconds" is part of the secToMin(); function
+var minutes, second, seconds; // "second" is the interval and "seconds" is part of the secToMin(); function
+var counter = 1500;
 
 //-------------------- Time Unit Conversion Code ------------------------------------------------//
 
@@ -34,17 +35,16 @@ var stopTimer = function () {
 
 var timer = function () {
     "use strict";
+    counter -= 1;
     $("title, #time").text(secToMin(counter));
     if (counter === 0) {
         stopTimer();
         document.getElementById("alarm").play();
-    } else {
-        counter -= 1;
     }
 };
 
 var startTimer = function () {
-    "use strict"; 
+    "use strict";
     window.clearInterval(second); // To ensure that there is only one timer running, cancel any previous ones.
     second = window.setInterval("timer()", 1000);
 };
@@ -55,18 +55,24 @@ var pomodorino = function () {
     "use strict";
     counter = 1500; // 25 Minutes
     startTimer();
+    $("#start").css("display", "none");
+    $("#stop").css("display", "inline");
 };
 
 var shortBreak = function () {
     "use strict";
     counter = 300; // 5 Minutes
     startTimer();
+    $("#start").css("display", "none");
+    $("#stop").css("display", "inline");
 };
 
 var longBreak = function () {
     "use strict";
     counter = 900; // 15 Minutes
     startTimer();
+    $("#start").css("display", "none");
+    $("#stop").css("display", "inline");
 };
 
 //-------------------- User Interaction Code ----------------------------------------------------//
@@ -84,8 +90,12 @@ $(document).ready(function () {
     });
     $("#start").click(function () {
         startTimer();
+        $("#start").css("display", "none");
+        $("#stop").css("display", "inline");
     });
     $("#stop").click(function () {
         stopTimer();
+        $("#stop").css("display", "none");
+        $("#start").css("display", "inline");
     });
 });

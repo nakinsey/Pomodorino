@@ -1,5 +1,4 @@
 # Pomodorino
----
 Pomodorino is a Pomodoro timer that stresses simplicity and functionality. The timer is based off of [the Pomodoro Technique](http://pomodorotechnique.com/) which was created by Francesco Cirillo. It's name comes from the Italian word for small tomato, as it is a light-weight version of the installable variations that circulate the web today.
 
 ## About the Pomodoro Technique
@@ -10,7 +9,7 @@ In this light-weight flavor of the timer, a pomodoro will be refered to as a pom
 ## TO DO:
 The current release of the timer is far from usable. It is bare-bones HTML and JavaScript. The top three goals for the project go as follows:
 
-1. Create an attractive, responsive UI that uses a flat design for ease-of-use
+1. ~~Create an attractive, responsive UI that uses a flat design for ease-of-use~~ DONE!!
 2. Dynamically manipulate the `title` tag to show the timer's current state
 3. Track the number of pomodorini completed, to recommend what type of break should be taken.
 
