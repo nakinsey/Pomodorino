@@ -28,6 +28,13 @@ var minToSec = function (input) {
 
 //-------------------- Timer Code ---------------------------------------------------------------//
 
+var printOut = function () {
+    "use strict";
+    var currentTime = secToMin(counter);
+    $("title").text("Pomodorino (" + currentTime + ")");
+    $("#time").text(currentTime);
+};
+
 var stopTimer = function () {
     "use strict";
     window.clearInterval(second);
@@ -36,7 +43,7 @@ var stopTimer = function () {
 var timer = function () {
     "use strict";
     counter -= 1;
-    $("title, #time").text(secToMin(counter));
+    printOut();
     if (counter === 0) {
         stopTimer();
         document.getElementById("alarm").play();
@@ -54,7 +61,7 @@ var startTimer = function () {
 var pomodorino = function () {
     "use strict";
     counter = 1500; // 25 Minutes
-    $("title, #time").text(secToMin(counter));
+    printOut();
     startTimer();
     $("#start").css("display", "none");
     $("#stop").css("display", "inline");
@@ -63,7 +70,7 @@ var pomodorino = function () {
 var shortBreak = function () {
     "use strict";
     counter = 300; // 5 Minutes
-    $("title, #time").text(secToMin(counter));
+    printOut();
     startTimer();
     $("#start").css("display", "none");
     $("#stop").css("display", "inline");
@@ -72,7 +79,7 @@ var shortBreak = function () {
 var longBreak = function () {
     "use strict";
     counter = 900; // 15 Minutes
-    $("title, #time").text(secToMin(counter));
+    printOut();
     startTimer();
     $("#start").css("display", "none");
     $("#stop").css("display", "inline");
@@ -100,5 +107,7 @@ $(document).ready(function () {
         stopTimer();
         $("#stop").css("display", "none");
         $("#start").css("display", "inline");
+        $("title").text("Pomodorino (PAUSED)");
+        $("#time").text("PAUSED");
     });
 });
