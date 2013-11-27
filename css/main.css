@@ -68,6 +68,19 @@ button {
     -moz-transition: background-color 0.5s ease;
     -o-transition: background-color 0.5s ease;
     transition: background-color 0.5s ease;
+    /*Box Shadow*/
+    -webkit-transition: -webkit-box-shadow 1s ease;
+    -moz-transition: -webkit-box-shadow 1s ease;
+    -o-transition: -webkit-box-shadow 1s ease;
+    transition: -webkit-box-shadow 1s ease;
+    -webkit-transition: -moz-box-shadow 1s ease;
+    -moz-transition: -moz-box-shadow 1s ease;
+    -o-transition: -moz-box-shadow 1s ease;
+    transition: -moz-box-shadow 1s ease;
+    -webkit-transition: box-shadow 1s ease;
+    -moz-transition: box-shadow 1s ease;
+    -o-transition: box-shadow 1s ease;
+    transition: box-shadow 1s ease;
     width: auto;
 }
 button:last-of-type {
@@ -111,6 +124,11 @@ div.counter:last-of-type {
 .center {
     margin: auto;
     text-align: center;
+}
+.recommended {
+    -webkit-box-shadow: 0px 0px 48px 7px #475BFF;
+    -moz-box-shadow: 0px 0px 48px 7px #475BFF;
+    box-shadow: 0px 0px 48px 7px #475BFF;
 }
 /* ==========================================================================
    Media Queries

@@ -26,7 +26,7 @@ var minToSec = function (input) {
     return input * 60;
 };
 
-//-------------------- Pomodorino Tracking Code -------------------------------------------------//
+//-------------------- Pomodorino Recommendation Code -------------------------------------------//
 
 var isPom = false;
 var pomCount = 0;
@@ -35,7 +35,14 @@ var recommend = function () {
     "use strict";
     if (isPom) {
         pomCount += 1;
-        isPom = false;
+    }
+
+    if (isPom && pomCount === 4) {
+        $("#lb").addClass("recommended");
+    } else if (isPom && pomCount > 0) {
+        $("#sb").addClass("recommended");
+    } else {
+        $("#pomodorino").addClass("recommended");
     }
 
     if (pomCount === 4) {
@@ -50,9 +57,14 @@ var recommend = function () {
     } else {
         $(".counter").css("background-color", "#F0F0F0");
     }
+
+    isPom = false;
 };
 
-
+var clearRecommendation = function () {
+    "use strict";
+    $(".recommended").removeClass("recommended");
+};
 //-------------------- Timer Code ---------------------------------------------------------------//
 
 var printOut = function () {
@@ -88,6 +100,7 @@ var startTimer = function () {
 
 var pomodorino = function () {
     "use strict";
+    clearRecommendation();
     counter = 1500; // 25 Minutes
     printOut();
     startTimer();
@@ -98,6 +111,7 @@ var pomodorino = function () {
 
 var shortBreak = function () {
     "use strict";
+    clearRecommendation();
     counter = 300; // 5 Minutes
     printOut();
     startTimer();
@@ -108,6 +122,7 @@ var shortBreak = function () {
 
 var longBreak = function () {
     "use strict";
+    clearRecommendation();
     counter = 900; // 15 Minutes
     printOut();
     startTimer();

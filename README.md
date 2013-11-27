@@ -9,11 +9,7 @@ This productivity technique breaks up daunting work into easy 25 minute chunks c
 In this light-weight flavor of the timer, a pomodoro will be refered to as a pomodorino. Additionally, the plural form of the word is "pomodorini."
 
 ## Current Development Goals:
-The top three goals for our UI push go as follows:
-
-1. ~~Create an attractive, responsive UI that uses a flat design for ease-of-use~~ DONE!!
-2. ~~Dynamically manipulate the `title` tag to show the timer's current state~~ DONE!!
-3. Track the number of pomodorini completed, to recommend what type of break should be taken.
+Our current goals have been met. Bug tests will be conducted for our first release.
 
 ## Technologies Used
 This web application is crafted out of the following:
