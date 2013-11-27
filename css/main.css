@@ -13,11 +13,11 @@ body {
     font-size: 1em;
     line-height: 1.4;
 }
-: : -moz-selection {
+::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
 }
-: : selection {
+::selection {
     background: #b3d4fc;
     text-shadow: none;
 }
@@ -50,15 +50,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/*---------- HTML Elements ----------*/
+
 html {
     background-color: #F0F0F0;
-}
-.center {
-    margin: auto;
-    text-align: center;
-}
-#app {
-    margin-top: 100px;
 }
 button {
     background-color: #333;
@@ -87,8 +82,35 @@ button:hover {
 .control button {
     margin-top: 2rem;
 }
+/*---------- Application Sections ----------*/
+
+#app {
+    margin-top: 100px;
+}
 .time {
     font-size: 4.5rem;
+}
+div.counter {
+    border: 1px solid #333;
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: 20px;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    -webkit-transition: background-color 1s ease;
+    -moz-transition: background-color 1s ease;
+    -o-transition: background-color 1s ease;
+    transition: background-color 1s ease;
+}
+div.counter:last-of-type {
+    margin-right: 0;
+}
+/*---------- Helper Classes ----------*/
+
+.center {
+    margin: auto;
+    text-align: center;
 }
 /* ==========================================================================
    Media Queries
@@ -108,7 +130,7 @@ button:hover {
         margin-top: 30px;
     }
     #app {
-    margin-top: 10px;
+        margin-top: 10px;
     }
 }
 @media only screen and (max-width: 450px) {

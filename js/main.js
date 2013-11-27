@@ -26,6 +26,33 @@ var minToSec = function (input) {
     return input * 60;
 };
 
+//-------------------- Pomodorino Tracking Code -------------------------------------------------//
+
+var isPom = false;
+var pomCount = 0;
+
+var recommend = function () {
+    "use strict";
+    if (isPom) {
+        pomCount += 1;
+        isPom = false;
+    }
+
+    if (pomCount === 4) {
+        $("#count4").css("background-color", "#333");
+        pomCount = 0;
+    } else if (pomCount === 3) {
+        $("#count3").css("background-color", "#333");
+    } else if (pomCount === 2) {
+        $("#count2").css("background-color", "#333");
+    } else if (pomCount === 1) {
+        $("#count1").css("background-color", "#333");
+    } else {
+        $(".counter").css("background-color", "#F0F0F0");
+    }
+};
+
+
 //-------------------- Timer Code ---------------------------------------------------------------//
 
 var printOut = function () {
@@ -47,6 +74,7 @@ var timer = function () {
     if (counter === 0) {
         stopTimer();
         document.getElementById("alarm").play();
+        recommend();
     }
 };
 
@@ -65,6 +93,7 @@ var pomodorino = function () {
     startTimer();
     $("#start").css("display", "none");
     $("#stop").css("display", "inline");
+    isPom = true;
 };
 
 var shortBreak = function () {
@@ -74,6 +103,7 @@ var shortBreak = function () {
     startTimer();
     $("#start").css("display", "none");
     $("#stop").css("display", "inline");
+    isPom = false;
 };
 
 var longBreak = function () {
@@ -83,6 +113,7 @@ var longBreak = function () {
     startTimer();
     $("#start").css("display", "none");
     $("#stop").css("display", "inline");
+    isPom = false;
 };
 
 //-------------------- User Interaction Code ----------------------------------------------------//
