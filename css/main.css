@@ -14,11 +14,11 @@ body {
     line-height: 1.4;
 }
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #475BFF;
     text-shadow: none;
 }
 ::selection {
-    background: #b3d4fc;
+    background: #475BFF;
     text-shadow: none;
 }
 hr {
@@ -85,10 +85,10 @@ button:hover {
 /*---------- Application Sections ----------*/
 
 #app {
-    margin-top: 100px;
+    margin-top:100px;
 }
 .time {
-    font-size: 4.5rem;
+    font-size:4.5rem;
 }
 div.counter {
     border: 1px solid #333;
@@ -117,8 +117,7 @@ div.counter:last-of-type {
    ========================================================================== */
 
 @media only screen and (max-width: 630px) {
-    .select button {
-        display: block;
+    button {
         margin: auto;
         margin-bottom: 10px;
         width: 75%;
@@ -131,12 +130,5 @@ div.counter:last-of-type {
     }
     #app {
         margin-top: 10px;
-    }
-}
-@media only screen and (max-width: 450px) {
-    button {
-        margin: auto;
-        margin-bottom: 10px;
-        width: 75%;
     }
 }
