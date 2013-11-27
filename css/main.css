@@ -50,6 +50,13 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+@font-face {
+    font-family: "Droid Sans";
+    src: url("WebFont.ttf") format("truetype"),
+}
+* {
+    font-family: "Droid Sans", sans-serif;
+}
 /*---------- HTML Elements ----------*/
 
 html {
@@ -62,8 +69,7 @@ button {
     color: #FFF;
     margin-right: 1em;
     padding: 16px 24px;
-    padding: 1.6rem 2.4rem;
-    text-transform: uppercase;
+    padding: 1.6em 2.4em;
     -webkit-transition: background-color 0.5s ease;
     -moz-transition: background-color 0.5s ease;
     -o-transition: background-color 0.5s ease;
@@ -90,18 +96,18 @@ button:hover {
     background-color: #475BFF;
 }
 .select button {
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
 }
 .control button {
-    margin-top: 2rem;
+    margin-top: 2em;
 }
 /*---------- Application Sections ----------*/
 
 #app {
-    margin-top:100px;
+    margin-top: 100px;
 }
 .time {
-    font-size:4.5rem;
+    font-size: 4.5em;
 }
 div.counter {
     border: 1px solid #333;
@@ -126,9 +132,9 @@ div.counter:last-of-type {
     text-align: center;
 }
 .recommended {
-    -webkit-box-shadow: 0px 0px 48px 7px #475BFF;
-    -moz-box-shadow: 0px 0px 48px 7px #475BFF;
-    box-shadow: 0px 0px 48px 7px #475BFF;
+    -webkit-box-shadow: 0 0 48px 7px #475BFF;
+    -moz-box-shadow: 0 0 48px 7px #475BFF;
+    box-shadow: 0 0 48px 7px #475BFF;
 }
 /* ==========================================================================
    Media Queries
@@ -140,11 +146,17 @@ div.counter:last-of-type {
         margin-bottom: 10px;
         width: 75%;
     }
+    .select button {
+        margin-bottom: 0.5em;
+    }
+    .control button {
+        margin-top: 0.7em;
+    }
     .select {
-        margin-bottom: 50px;
+        margin-bottom: 0;
     }
     .control {
-        margin-top: 30px;
+        margin-top: 0;
     }
     #app {
         margin-top: 10px;
