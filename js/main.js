@@ -157,3 +157,13 @@ $(document).ready(function () {
         $("#time").text("PAUSED");
     });
 });
+
+//-------------------- Settings Code ------------------------------------------------------------//
+
+$(document).ready(function () {
+    "use strict";
+    $(".icon-cog").click(function () {
+        $(".dimmer").css("display", "block");
+        $("#settings").css("display", "block");
+    });
+});
