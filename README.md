@@ -9,7 +9,10 @@ This productivity technique breaks up daunting work into easy 25 minute chunks c
 In this light-weight flavor of the timer, a pomodoro will be refered to as a pomodorino. Additionally, the plural form of the word is "pomodorini."
 
 ## Current Development Goals:
-Our current goals have been met. Bug tests will be conducted for our first release.
+Our current over-arching development goal is user customization. This will be achieved by:
+- Allowing custom time values to be used in the `pomodorino()`, `shortBreak()`, and `longBreak()` functions.
+- Creating a "strict mode" that disables the ability to pause, and automatically starts a Pomodorino after a break.
+- Remembering the user's customizations for the next visit.
 
 ## Technologies Used
 This web application is crafted out of the following:

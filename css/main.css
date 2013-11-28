@@ -70,23 +70,18 @@ button {
     margin-right: 1em;
     padding: 16px 24px;
     padding: 1.6em 2.4em;
-    -webkit-transition: background-color 0.5s ease;
-    -moz-transition: background-color 0.5s ease;
-    -o-transition: background-color 0.5s ease;
-    transition: background-color 0.5s ease;
-    /*Box Shadow*/
-    -webkit-transition: -webkit-box-shadow 1s ease;
-    -moz-transition: -webkit-box-shadow 1s ease;
-    -o-transition: -webkit-box-shadow 1s ease;
-    transition: -webkit-box-shadow 1s ease;
-    -webkit-transition: -moz-box-shadow 1s ease;
-    -moz-transition: -moz-box-shadow 1s ease;
-    -o-transition: -moz-box-shadow 1s ease;
-    transition: -moz-box-shadow 1s ease;
-    -webkit-transition: box-shadow 1s ease;
-    -moz-transition: box-shadow 1s ease;
-    -o-transition: box-shadow 1s ease;
-    transition: box-shadow 1s ease;
+    -webkit-transition:
+        box-shadow 1s ease,
+        background-color 0.5s ease;
+    -moz-transition:
+        box-shadow 1s ease,
+        background-color 0.5s ease;
+    -o-transition:
+        box-shadow 1s ease,
+        background-color 0.5s ease;
+    transition:
+        box-shadow 1s ease,
+        background-color 0.5s ease;
     width: auto;
 }
 button:last-of-type {
