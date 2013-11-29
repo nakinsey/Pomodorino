@@ -16,7 +16,7 @@ Our current over-arching development goal is user customization. This will be ac
 
 We want the app to look similar to this mockup when released:
 
-![alt text](https://raw.github.com/cosmicauma31/Pomodorino/master/Pomodorino.png "Pomodorino Mockup")
+![alt text](https://raw.github.com/cosmicauma31/Pomodorino/master/assets/Pomodorino.png "Pomodorino Mockup")
 ## Technologies Used
 This web application is crafted out of the following:
 - HTML
