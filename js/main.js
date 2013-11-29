@@ -5,6 +5,20 @@
 var minutes, second, seconds; // "second" is the interval and "seconds" is part of the secToMin(); function
 var counter = 1500;
 
+//-------------------- Lightbox Effect ----------------------------------------------------------//
+
+var lightbox = function (target) {
+    "use strict";
+    $(".dimmer").css("display", "block");
+    $(target).css("display", "block");
+};
+
+var clearLightbox = function (target) {
+    "use strict";
+    $(".dimmer").css("display", "none");
+    $(target).css("display", "none");
+};
+
 //-------------------- Time Unit Conversion Code ------------------------------------------------//
 
 var secToMin = function (input) {
@@ -163,7 +177,20 @@ $(document).ready(function () {
 $(document).ready(function () {
     "use strict";
     $(".icon-cog").click(function () {
-        $(".dimmer").css("display", "block");
-        $("#settings").css("display", "block");
+        lightbox("#settings");
+    });
+});
+
+//-------------------- Cross-browser Compatibility Code -----------------------------------------//
+
+// Media only loads on a click for mobile browsers
+$(document).ready(function () {
+    "use strict";
+    lightbox("#loadAudio");
+    $("#loadAudio button").click(function () {
+        document.getElementById("alarm").play();
+        document.getElementById("alarm").pause();
+        clearLightbox("#loadAudio");
+        pomodorino();
     });
 });

@@ -132,6 +132,8 @@ div.counter:last-of-type {
     cursor: help;
     width: 32px;
 }
+/*---------- Lightbox Effect ----------*/
+
 .dimmer {
     background-color: #000;
     display: none;
@@ -143,12 +145,13 @@ div.counter:last-of-type {
     height: 100%;
     z-index: 1000;
 }
-#settings {
+.lightbox {
     background-color: #F0F0F0;
     display: none;
     position: fixed;
     margin-left: 15%;
     left: 1000;
+    text-align: center;
     width: 70%;
     height: 85%;
     z-index: 1001;
@@ -158,6 +161,9 @@ div.counter:last-of-type {
 .center {
     margin: auto;
     text-align: center;
+}
+.middle {
+    vertical-align: middle;
 }
 .recommended {
     -webkit-box-shadow: 0 0 48px 7px #475BFF;
