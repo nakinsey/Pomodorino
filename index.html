@@ -19,14 +19,33 @@
 
     <div class="icon-cog"></div>
     <div class="dimmer"></div>
-    <div id="settings" class="lightbox"></div>
+    <div id="settings" class="lightbox">
+        <br>
+        <label for="pomodorino">Pomodorino</label>
+        <br>
+        <input name="pomodorino" id="pomodorino" type="text">
+        <br>
+        <label for="short">Short Break</label>
+        <br>
+        <input name="short" id="short" type="text">
+        <br>
+        <label for="long">Long Break</label>
+        <br>
+        <input name="long" id="long" type="text">
+        <br>
+        <label for="strict">Use Strict Mode</label>
+        <input name="strict" id="strict" type="checkbox">
+        <div class="icon-question"></div>
+        <br>
+        <button id="save">SAVE</button>
+    </div>
     <div id="loadAudio" class="lightbox">
         <button class="recommended" style="margin-top: 10em;">START WORKING</button>
     </div>
 
     <div class="center" id="app">
         <div class="select">
-            <button id="pomodorino">POMODORINO</button>
+            <button id="pomodorino" onclick="pomodorino()">POMODORINO</button>
             <button id="sb">SHORT BREAK</button>
             <button id="lb">LONG BREAK</button>
         </div>

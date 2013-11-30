@@ -179,6 +179,9 @@ $(document).ready(function () {
     $(".icon-cog").click(function () {
         lightbox("#settings");
     });
+    $("#save").click(function () {
+        clearLightbox("#settings");
+    });
 });
 
 //-------------------- Cross-browser Compatibility Code -----------------------------------------//

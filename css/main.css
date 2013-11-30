@@ -132,6 +132,27 @@ div.counter:last-of-type {
     cursor: help;
     width: 32px;
 }
+#settings {
+    line-height: 200%;
+}
+input[type="text"] {
+	background-color: #fff;
+	border: 1px solid #333;
+	border-radius: 3px;
+	box-shadow: 1px 1px 3px #eee inset;
+	color: #999;
+}
+input:focus,
+textarea:focus {
+	border: 2px solid #475BFF;
+	outline: none;
+}
+input[type="checkbox"] {
+    margin: 1em 1em 2em 0.5em;
+}
+#settings .icon-question {
+    margin-bottom: -0.5em;
+}
 /*---------- Lightbox Effect ----------*/
 
 .dimmer {
@@ -150,7 +171,9 @@ div.counter:last-of-type {
     display: none;
     position: fixed;
     margin-left: 15%;
+    margin-top: -1em;
     left: 1000;
+    overflow: auto;
     text-align: center;
     width: 70%;
     height: 85%;
