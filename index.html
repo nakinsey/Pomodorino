@@ -18,34 +18,40 @@
 <body>
 
     <div class="icon-cog"></div>
+    <div class="icon-question"></div>
     <div class="dimmer"></div>
+
     <div id="settings" class="lightbox">
         <br>
-        <label for="pomodorino">Pomodorino</label>
+        <label for="setPom">Pomodorino</label>
         <br>
-        <input name="pomodorino" id="pomodorino" type="text">
+        <input id="setPom" type="text">
         <br>
-        <label for="short">Short Break</label>
+        <label for="setShort">Short Break</label>
         <br>
-        <input name="short" id="short" type="text">
+        <input id="setShort" type="text">
         <br>
-        <label for="long">Long Break</label>
+        <label for="setLong">Long Break</label>
         <br>
-        <input name="long" id="long" type="text">
+        <input id="setLong" type="text">
         <br>
-        <label for="strict">Use Strict Mode</label>
-        <input name="strict" id="strict" type="checkbox">
-        <div class="icon-question"></div>
+        <label for="setStrict">Use Strict Mode</label>
+        <input id="setStrict" type="checkbox">
         <br>
         <button id="save">SAVE</button>
     </div>
+
+    <div id="help" class="lightbox">
+        <button id="done">DONE</button>
+    </div>
+
     <div id="loadAudio" class="lightbox">
         <button class="recommended" style="margin-top: 10em;">START WORKING</button>
     </div>
 
     <div class="center" id="app">
         <div class="select">
-            <button id="pomodorino" onclick="pomodorino()">POMODORINO</button>
+            <button id="pomodorino">POMODORINO</button>
             <button id="sb">SHORT BREAK</button>
             <button id="lb">LONG BREAK</button>
         </div>

@@ -112,7 +112,7 @@ div.counter {
 div.counter:last-of-type {
     margin-right: 0;
 }
-/*---------- Settings ----------*/
+/*---------- Settings & Help ----------*/
 
 [class*="icon-"] {
     display: inline-block;
@@ -131,6 +131,8 @@ div.counter:last-of-type {
     background-position: -48px 0;
     cursor: help;
     width: 32px;
+    float: right;
+    margin: 5px 5px 0 0;
 }
 #settings {
     line-height: 200%;
@@ -148,10 +150,10 @@ textarea:focus {
 	outline: none;
 }
 input[type="checkbox"] {
-    margin: 1em 1em 2em 0.5em;
+    margin: 1em 0 2em 0.5em;
 }
-#settings .icon-question {
-    margin-bottom: -0.5em;
+#help {
+    
 }
 /*---------- Lightbox Effect ----------*/
 

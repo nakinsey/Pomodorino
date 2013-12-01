@@ -172,7 +172,7 @@ $(document).ready(function () {
     });
 });
 
-//-------------------- Settings Code ------------------------------------------------------------//
+//-------------------- Settings & Help Code -----------------------------------------------------//
 
 $(document).ready(function () {
     "use strict";
@@ -181,6 +181,12 @@ $(document).ready(function () {
     });
     $("#save").click(function () {
         clearLightbox("#settings");
+    });
+    $(".icon-question").click(function () {
+        lightbox("#help");
+    });
+    $("#done").click(function () {
+        clearLightbox("#help");
     });
 });
 
