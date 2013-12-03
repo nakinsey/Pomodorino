@@ -2,92 +2,6 @@
    Released Under the MIT Licence -- http://opensource.org/licenses/MIT
    ========================================================================== */
 
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
-body {
-    font-size: 1em;
-    line-height: 1.4;
-}
-::-moz-selection {
-    background: #475BFF;
-    text-shadow: none;
-}
-::selection {
-    background: #475BFF;
-    text-shadow: none;
-}
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-img {
-    vertical-align: middle;
-}
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-textarea {
-    resize: vertical;
-}
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-@font-face {
-    font-family: "Droid Sans";
-    src: url("WebFont.ttf") format("truetype"),
-}
-* {
-    font-family: "Droid Sans", sans-serif;
-}
-/*---------- HTML Elements ----------*/
-
-html {
-    background-color: #F0F0F0;
-}
-button {
-    background-color: #333;
-    border: none;
-    border-radius: 2px;
-    color: #FFF;
-    margin-right: 1em;
-    padding: 16px 24px;
-    padding: 1.6em 2.4em;
-    -webkit-transition: box-shadow 1s ease, background-color 0.5s ease;
-    -moz-transition: box-shadow 1s ease, background-color 0.5s ease;
-    -o-transition: box-shadow 1s ease, background-color 0.5s ease;
-    transition: box-shadow 1s ease, background-color 0.5s ease;
-    width: auto;
-}
-button:last-of-type {
-    margin-right: 0;
-}
-button:hover {
-    background-color: #475BFF;
-}
-.select button {
-    margin-bottom: 2em;
-}
-.control button {
-    margin-top: 2em;
-}
 /*---------- Application Sections ----------*/
 
 #app {
@@ -97,7 +11,7 @@ button:hover {
     font-size: 4.5em;
 }
 div.counter {
-    border: 1px solid #333;
+    border: 1px solid #2ba6cb;
     display: inline-block;
     margin-top: 5px;
     margin-right: 20px;
@@ -118,7 +32,7 @@ div.counter:last-of-type {
     display: inline-block;
     width: 32px;
     height: 32px;
-    background-image: url(../assets/sprites.png);
+    background-image: url(../img/sprites.png);
     background-repeat: no-repeat;
 }
 .icon-cog {
@@ -134,52 +48,8 @@ div.counter:last-of-type {
     float: right;
     margin: 5px 5px 0 0;
 }
-#settings {
-    line-height: 200%;
-}
-input[type="text"] {
-	background-color: #fff;
-	border: 1px solid #333;
-	border-radius: 3px;
-	box-shadow: 1px 1px 3px #eee inset;
-	color: #999;
-}
-input:focus,
-textarea:focus {
-	border: 2px solid #475BFF;
-	outline: none;
-}
-input[type="checkbox"] {
-    margin: 1em 0 2em 0.5em;
-}
-#help {
-    
-}
-/*---------- Lightbox Effect ----------*/
-
-.dimmer {
-    background-color: #000;
-    display: none;
-    opacity: 0.8;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-}
-.lightbox {
-    background-color: #F0F0F0;
-    display: none;
-    position: fixed;
-    margin-left: 15%;
-    margin-top: -1em;
-    left: 1000;
-    overflow: auto;
-    text-align: center;
-    width: 70%;
-    height: 85%;
-    z-index: 1001;
+.control {
+    margin-top: 10px;
 }
 /*---------- Helper Classes ----------*/
 

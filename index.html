@@ -1,53 +1,22 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
+
 <!-- ========================================================================
    Released Under the MIT Licence -- http://opensource.org/licenses/MIT
    ========================================================================== -->
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodorino Timer</title>
-    <meta name="description" content="A light-weight Pomodoro timer that stresses simplicity and functionality.">
-    <meta name="viewport" content="width=device-width initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/foundation.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/modernizr.js"></script>
 </head>
 
 <body>
-
-    <div class="icon-cog"></div>
-    <div class="icon-question"></div>
-    <div class="dimmer"></div>
-
-    <div id="settings" class="lightbox">
-        <br>
-        <label for="setPom">Pomodorino</label>
-        <br>
-        <input id="setPom" type="text">
-        <br>
-        <label for="setShort">Short Break</label>
-        <br>
-        <input id="setShort" type="text">
-        <br>
-        <label for="setLong">Long Break</label>
-        <br>
-        <input id="setLong" type="text">
-        <br>
-        <label for="setStrict">Use Strict Mode</label>
-        <input id="setStrict" type="checkbox">
-        <br>
-        <button id="save">SAVE</button>
-    </div>
-
-    <div id="help" class="lightbox">
-        <button id="done">DONE</button>
-    </div>
-
-    <div id="loadAudio" class="lightbox">
-        <button class="recommended" style="margin-top: 10em;">START WORKING</button>
-    </div>
+    <div class="icon-cog" data-reveal-id="settings"></div>
+    <div class="icon-question" data-reveal-id="help"></div>
 
     <div class="center" id="app">
         <div class="select">
@@ -73,14 +42,36 @@
         </div>
     </div>
 
+    <!----------------- Modals ------------------------------------------------------------------->
+
+    <div id="settings" class="reveal-modal" data-reveal>
+        <label for="setPom">Pomodorino</label>
+        <input id="setPom" type="text">
+        <label for="setShort">Short Break</label>
+        <input id="setShort" type="text">
+        <label for="setLong">Long Break</label>
+        <input id="setLong" type="text">
+        <label for="setStrict">Use Strict Mode</label>
+        <input id="setStrict" type="checkbox">
+        <button id="save">SAVE</button>
+        <a class="close-reveal-modal">&#215;</a>
+    </div>
+
+    <div id="help" class="reveal-modal" data-reveal>
+        <a class="close-reveal-modal">&#215;</a>
+    </div>
 
     <audio id="alarm">
-        <source src="assets/alarm.mp3" type="audio/mpeg" />
-        <source src="assets/alarm.ogg" type="audio/ogg" />Your browser does not support this audio format.
+        <source src="alarm.mp3" type="audio/mpeg" />
+        <source src="alarm.ogg" type="audio/ogg" />Your browser does not support this audio format.
     </audio>
 
-    <script src="js/vendor/jquery-1.10.1.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
 </body>
 
 </html>

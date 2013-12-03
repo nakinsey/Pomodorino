@@ -5,20 +5,6 @@
 var minutes, second, seconds; // "second" is the interval and "seconds" is part of the secToMin(); function
 var counter = 1500;
 
-//-------------------- Lightbox Effect ----------------------------------------------------------//
-
-var lightbox = function (target) {
-    "use strict";
-    $(".dimmer").css("display", "block");
-    $(target).css("display", "block");
-};
-
-var clearLightbox = function (target) {
-    "use strict";
-    $(".dimmer").css("display", "none");
-    $(target).css("display", "none");
-};
-
 //-------------------- Time Unit Conversion Code ------------------------------------------------//
 
 var secToMin = function (input) {
@@ -60,16 +46,16 @@ var recommend = function () {
     }
 
     if (pomCount === 4) {
-        $("#count4").css("background-color", "#333");
+        $("#count4").css("background-color", "#2ba6cb");
         pomCount = 0;
     } else if (pomCount === 3) {
-        $("#count3").css("background-color", "#333");
+        $("#count3").css("background-color", "#2ba6cb");
     } else if (pomCount === 2) {
-        $("#count2").css("background-color", "#333");
+        $("#count2").css("background-color", "#2ba6cb");
     } else if (pomCount === 1) {
-        $("#count1").css("background-color", "#333");
+        $("#count1").css("background-color", "#2ba6cb");
     } else {
-        $(".counter").css("background-color", "#F0F0F0");
+        $(".counter").css("background-color", "#fff");
     }
 
     isPom = false;
@@ -151,12 +137,18 @@ $(document).ready(function () {
     "use strict";
     $("#pomodorino").click(function () {
         pomodorino();
+        document.getElementById("alarm").play(); // Media only loads on a click for mobile browsers
+        document.getElementById("alarm").pause();
     });
     $("#sb").click(function () {
         shortBreak();
+        document.getElementById("alarm").play();
+        document.getElementById("alarm").pause();
     });
     $("#lb").click(function () {
         longBreak();
+        document.getElementById("alarm").play();
+        document.getElementById("alarm").pause();
     });
     $("#start").click(function () {
         startTimer();
@@ -173,33 +165,3 @@ $(document).ready(function () {
 });
 
 //-------------------- Settings & Help Code -----------------------------------------------------//
-
-$(document).ready(function () {
-    "use strict";
-    $(".icon-cog").click(function () {
-        lightbox("#settings");
-    });
-    $("#save").click(function () {
-        clearLightbox("#settings");
-    });
-    $(".icon-question").click(function () {
-        lightbox("#help");
-    });
-    $("#done").click(function () {
-        clearLightbox("#help");
-    });
-});
-
-//-------------------- Cross-browser Compatibility Code -----------------------------------------//
-
-// Media only loads on a click for mobile browsers
-$(document).ready(function () {
-    "use strict";
-    lightbox("#loadAudio");
-    $("#loadAudio button").click(function () {
-        document.getElementById("alarm").play();
-        document.getElementById("alarm").pause();
-        clearLightbox("#loadAudio");
-        pomodorino();
-    });
-});
