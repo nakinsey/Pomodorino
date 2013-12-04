@@ -4,13 +4,13 @@
 
 /*---------- Application Sections ----------*/
 
-#app {
-    margin-top: 100px;
-}
 .time {
     font-size: 4.5em;
 }
-div.counter {
+.control {
+    margin-top: 20px;
+}
+.counter {
     border: 1px solid #2ba6cb;
     display: inline-block;
     margin-top: 5px;
@@ -23,7 +23,7 @@ div.counter {
     -o-transition: background-color 1s ease;
     transition: background-color 1s ease;
 }
-div.counter:last-of-type {
+.counter:last-of-type {
     margin-right: 0;
 }
 button {
@@ -45,27 +45,21 @@ button {
     background-position: 0 0;
     cursor: pointer;
     width: 32px;
-    margin: 5px 0 0 5px;
+    margin: 5px;
 }
 .icon-question {
     background-position: -48px 0;
     cursor: help;
     width: 32px;
     float: right;
-    margin: 5px 5px 0 0;
+    margin: 5px;
 }
-.control {
-    margin-top: 10px;
+label {
+    display: inline-block;
+    margin-right: 1em;
 }
 /*---------- Helper Classes ----------*/
 
-.center {
-    margin: auto;
-    text-align: center;
-}
-.middle {
-    vertical-align: middle;
-}
 .recommended {
     -webkit-box-shadow: 0 0 48px 7px #5da423;
     -moz-box-shadow: 0 0 48px 7px #5da423;
@@ -80,19 +74,5 @@ button {
         margin: auto;
         margin-bottom: 10px;
         width: 75%;
-    }
-    .select button {
-        margin-bottom: 0.5em;
-    }
-    .select {
-        margin-bottom: 0;
-    }
-    #app {
-        margin-top: 10px;
-    }
-    #settings {
-        margin-left: 5%;
-        width: 90%;
-        height: 90%;
     }
 }

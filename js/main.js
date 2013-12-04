@@ -104,8 +104,8 @@ var pomodorino = function () {
     counter = 1500; // 25 Minutes
     printOut();
     startTimer();
-    $("#start").css("display", "none");
-    $("#stop").css("display", "inline");
+    $("#start").addClass("hide");
+    $("#stop").removeClass("hide");
     isPom = true;
 };
 
@@ -115,8 +115,8 @@ var shortBreak = function () {
     counter = 300; // 5 Minutes
     printOut();
     startTimer();
-    $("#start").css("display", "none");
-    $("#stop").css("display", "inline");
+    $("#start").addClass("hide");
+    $("#stop").removeClass("hide");
     isPom = false;
 };
 
@@ -126,8 +126,8 @@ var longBreak = function () {
     counter = 900; // 15 Minutes
     printOut();
     startTimer();
-    $("#start").css("display", "none");
-    $("#stop").css("display", "inline");
+    $("#start").addClass("hide");
+    $("#stop").removeClass("hide");
     isPom = false;
 };
 
@@ -152,13 +152,13 @@ $(document).ready(function () {
     });
     $("#start").click(function () {
         startTimer();
-        $("#start").css("display", "none");
-        $("#stop").css("display", "inline");
+        $("#start").addClass("hide");
+        $("#stop").removeClass("hide");
     });
     $("#stop").click(function () {
         stopTimer();
-        $("#stop").css("display", "none");
-        $("#start").css("display", "inline");
+        $("#stop").addClass("hide");
+        $("#start").removeClass("hide");
         $("title").text("Pomodorino (PAUSED)");
         $("#time").text("PAUSED");
     });
