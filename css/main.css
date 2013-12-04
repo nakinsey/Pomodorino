@@ -26,6 +26,12 @@ div.counter {
 div.counter:last-of-type {
     margin-right: 0;
 }
+button {
+    -webkit-transition: box-shadow 1s ease;
+    -moz-transition: box-shadow 1s ease;
+    -o-transition: box-shadow 1s ease;
+    transition: box-shadow 1s ease;
+}
 /*---------- Settings & Help ----------*/
 
 [class*="icon-"] {
@@ -61,15 +67,15 @@ div.counter:last-of-type {
     vertical-align: middle;
 }
 .recommended {
-    -webkit-box-shadow: 0 0 48px 7px #475BFF;
-    -moz-box-shadow: 0 0 48px 7px #475BFF;
-    box-shadow: 0 0 48px 7px #475BFF;
+    -webkit-box-shadow: 0 0 48px 7px #5da423;
+    -moz-box-shadow: 0 0 48px 7px #5da423;
+    box-shadow: 0 0 48px 7px #5da423;
 }
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (max-width: 630px) {
+@media only screen and (max-width: 640px) {
     button {
         margin: auto;
         margin-bottom: 10px;
@@ -78,14 +84,8 @@ div.counter:last-of-type {
     .select button {
         margin-bottom: 0.5em;
     }
-    .control button {
-        margin-top: 0.7em;
-    }
     .select {
         margin-bottom: 0;
-    }
-    .control {
-        margin-top: 0;
     }
     #app {
         margin-top: 10px;
