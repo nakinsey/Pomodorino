@@ -1,5 +1,5 @@
 # Pomodorino
-Pomodorino is a Pomodoro timer that stresses simplicity and functionality. The timer is based off of [the Pomodoro Technique](http://pomodorotechnique.com/) which was created by Francesco Cirillo. It's name comes from the Italian word for small tomato, as it is a light-weight version of the installable variations that circulate the web today.
+Pomodorino is a Pomodoro timer that stresses simplicity and functionality. The timer is based off of [the Pomodoro Technique](http://pomodorotechnique.com/) which was created by Francesco Cirillo. Its name comes from the Italian word for small tomato, as it is a light-weight version of the installable variations that circulate the web today.
 
 If you would like to [use Pomodorino](http://cosmicauma31.github.io/Pomodorino/), the application is hosted on a GitHub page.
 
