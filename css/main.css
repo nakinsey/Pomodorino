@@ -49,8 +49,15 @@ button {
     background-position: -48px 0;
     cursor: help;
     width: 32px;
-    float: right;
     margin: 5px;
+}
+.icon-question[data-reveal-id="help"] {
+    float: right;
+}
+.icon-question.has-tip {
+    margin-bottom: -0.5em;
+    margin-left: 1em;
+    border-bottom: 0;
 }
 label {
     display: inline-block;

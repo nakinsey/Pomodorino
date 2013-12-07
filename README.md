@@ -11,8 +11,9 @@ In this light-weight flavor of the timer, a pomodoro will be refered to as a pom
 ## Current Development Goals:
 Our current over-arching development goal is user customization. This will be achieved by:
 - Allowing custom time values to be used in the `pomodorino()`, `shortBreak()`, and `longBreak()` functions.
-- Creating a "strict mode" that disables the ability to pause, and automatically starts a Pomodorino after a break.
+- Creating a "strict mode" that automatically starts a Pomodorino after a break.
 - Remembering the user's customizations for the next visit.
+ - Changes will be saved when the modal closes. Foundation fires an event that we can use for this.
 
 We want the app to look similar to this mockup when released:
 
