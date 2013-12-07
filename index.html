@@ -57,22 +57,28 @@
     <!----------------- Modals ------------------------------------------------------------------->
 
     <div id="settings" class="reveal-modal" data-reveal>
-        <div class="row">
-            <div class="medium-4 columns">
-                <label for="setPom">Pomodorino</label>
-                <input id="setPom" type="text">
-            </div>
+        <form data-abide class="row">
 
-            <div class="medium-4 columns">
-                <label for="setShort">Short Break</label>
-                <input id="setShort" type="text">
-            </div>
+            <fieldset>
+                <legend>In Minutes</legend>
 
-            <div class="medium-4 columns">
-                <label for="setLong">Long Break</label>
-                <input id="setLong" type="text">
-            </div>
-        </div>
+                <div class="medium-4 columns">
+                    <label for="setPom">Pomodorino</label>
+                    <input id="setPom" type="number">
+                </div>
+
+                <div class="medium-4 columns">
+                    <label for="setShort">Short Break</label>
+                    <input id="setShort" type="number">
+                </div>
+
+                <div class="medium-4 columns">
+                    <label for="setLong">Long Break</label>
+                    <input id="setLong" type="number">
+                </div>
+            </fieldset>
+
+        </form>
 
         <div class="row text-center">
             <label for="setStrict">Use Strict Mode</label>
@@ -95,15 +101,16 @@
             <small>A modern productivity timer</small>
         </h1>
         <hr>
-        
-        
+
+
         <h2>About Pomodorino</h2>
-        <p>Pomodorino is a Pomodoro timer that stresses simplicity and functionality. The timer is based off of <a href="http://pomodorotechnique.com">the Pomodoro Technique</a> which was created by Francesco Cirillo. Its name comes from the Italian word for small tomato, as it is a light-weight version of the installable variations that circulate the web today.</p>
-        
-        
+        <p>Pomodorino is a Pomodoro timer that stresses simplicity and functionality. The timer is based off of
+            <a href="http://pomodorotechnique.com">the Pomodoro Technique</a>which was created by Francesco Cirillo. Its name comes from the Italian word for small tomato, as it is a light-weight version of the installable variations that circulate the web today.</p>
+
+
         <h2>How to Use the Timer</h2>
         <p>The Pomodorino timer separates intimidating heaps of work into smaller, more manageable chunks. It does this by having you do a pomodorino, a 25 minute session of undistracted work. These are promptly followed by a five-minute break. For every four pomodorini (plural), you are rewarded with a longer 15 minute break.</p>
-        
+
         <p>Pomodorino offers unique functionality that makes it more convenient than a simple kitchen timer. These features include:</p>
         <ul>
             <li>Starting a pomodorino, short break, and long break all with the press of a button</li>
@@ -111,10 +118,12 @@
             <li>The timer automatically recommends the next course of action, so you always know when relax and when to work. The recommendations are denoted by a green glow around the recommended button.</li>
             <li>This web app works on desktops, laptops, tablets, and phones. Pomodorino is always there when you need it.</li>
         </ul>
-        
+
         <h2>Licensing</h2>
-        <p>Pomodorino, jQuery, Modernizr, and the Foundation UI framework all use the business friendly <a href="http://opensource.org/licenses/MIT">MIT license.</a> Also, you can <a href="https://github.com/cosmicauma31/Pomodorino">view the source code on our GitHub repo</a>.</p>
-        
+        <p>Pomodorino, jQuery, Modernizr, and the Foundation UI framework all use the business friendly
+            <a href="http://opensource.org/licenses/MIT">MIT license.</a>Also, you can
+            <a href="https://github.com/cosmicauma31/Pomodorino">view the source code on our GitHub repo</a>.</p>
+
         <a class="close-reveal-modal">&#215;</a>
     </div>
 

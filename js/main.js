@@ -26,6 +26,28 @@ var minToSec = function (input) {
     return input * 60;
 };
 
+//-------------------- Settings Code ------------------------------------------------------------//
+
+var pomodorinoValue = 1500; // 25 Minutes
+var shortBreakValue = 300; // 5 Minutes
+var longBreakValue = 900; // 15 Minutes
+var strict = false;
+
+var populateSettings = function () {
+    "use strict";
+    $("#setPom").attr("value", pomodorinoValue / 60);
+    $("#setShort").attr("value", shortBreakValue / 60);
+    $("#setLong").attr("value", longBreakValue / 60);
+    if (strict) {
+        $("#setStrict").attr("checked", "checked");
+    }
+};
+
+$(document).ready(function () {
+    "use strict";
+    populateSettings();
+});
+
 //-------------------- Pomodorino Recommendation Code -------------------------------------------//
 
 var isPom = false;
@@ -101,7 +123,7 @@ var startTimer = function () {
 var pomodorino = function () {
     "use strict";
     clearRecommendation();
-    counter = 1500; // 25 Minutes
+    counter = pomodorinoValue;
     printOut();
     startTimer();
     $("#start").addClass("hide");
@@ -112,7 +134,7 @@ var pomodorino = function () {
 var shortBreak = function () {
     "use strict";
     clearRecommendation();
-    counter = 300; // 5 Minutes
+    counter = shortBreakValue;
     printOut();
     startTimer();
     $("#start").addClass("hide");
@@ -123,7 +145,7 @@ var shortBreak = function () {
 var longBreak = function () {
     "use strict";
     clearRecommendation();
-    counter = 900; // 15 Minutes
+    counter = longBreakValue;
     printOut();
     startTimer();
     $("#start").addClass("hide");
@@ -163,5 +185,3 @@ $(document).ready(function () {
         $("#time").text("PAUSED");
     });
 });
-
-//-------------------- Settings & Help Code -----------------------------------------------------//
