@@ -1,6 +1,7 @@
 /* ==========================================================================
    Released Under the MIT Licence -- http://opensource.org/licenses/MIT
    ========================================================================== */
+/*jshint camelcase:true, curly:true, eqeqeq:true, freeze:true, newcap:true, quotmark:double, strict:true, trailing:true, browser:true, jquery:true*/
 
 var minutes, second, seconds; // "second" is the interval and "seconds" is part of the secToMin(); function
 var counter = 1500;
@@ -36,18 +37,16 @@ var strict = false;
 
 $(document).ready(function () {
     "use strict";
-    var custom = localStorage.getItem("custom");
+    var custom = localStorage.getItem("custom"),
+        getPomodorino = localStorage.getItem("pomodorino"),
+        getShortBreak = localStorage.getItem("shortBreak"),
+        getLongBreak = localStorage.getItem("longBreak"),
+        getStrict = localStorage.getItem("strict");
     if (custom === "true") {
-        var getPomodorino = localStorage.getItem("pomodorino");
         pomodorinoValue = parseInt(getPomodorino, 10);
-        
-        var getShortBreak = localStorage.getItem("shortBreak");
         shortBreakValue = parseInt(getShortBreak, 10);
-        
-        var getLongBreak = localStorage.getItem("longBreak");
         longBreakValue = parseInt(getLongBreak, 10);
-        
-        var getStrict = localStorage.getItem("strict");
+
         if (getStrict === "true") {
             strict = true;
         }
@@ -74,7 +73,7 @@ $(document).ready(function () {
 var toNumber = function (number) {
     "use strict";
     var n = parseInt(number, 10);
-    if (n !== n) { // Recommended by MDN in place of isNaN(), until Number.isNaN() is widely implemented
+    if (isNaN(n)) { // Recommended by MDN in place of isNaN(), until Number.isNaN() is widely implemented
         return "NaN";
     }
     return minToSec(n);
@@ -118,12 +117,12 @@ var saveSettings = function () {
     }
 
     localStorage.setItem("custom", "true");
-    
+
     populateSettings();
 };
 
 // Save settings on modal close
-$(document).on('close', '[data-reveal]', function () {
+$(document).on("close", "[data-reveal]", function () {
     "use strict";
     saveSettings();
 });
@@ -178,28 +177,25 @@ var printOut = function () {
 
 var stopTimer = function () {
     "use strict";
-    window.clearInterval(second);
-};
-
-var timer = function () {
-    "use strict";
-    counter -= 1;
-    printOut();
-    if (counter === 0) {
-        stopTimer();
-        document.getElementById("alarm").play();
-        if (strict && !isPom) {
-            pomodorino();
-        } else {
-            recommend();
-        }
-    }
+    clearInterval(second);
 };
 
 var startTimer = function () {
     "use strict";
-    window.clearInterval(second); // To ensure that there is only one timer running, cancel any previous ones.
-    second = window.setInterval("timer()", 1000);
+    clearInterval(second); // To ensure that there is only one timer running, cancel any previous ones.
+    second = setInterval(function timer() {
+        counter -= 1;
+        printOut();
+        if (counter === 0) {
+            stopTimer();
+            document.getElementById("alarm").play();
+            if (strict && !isPom) {
+                pomodorino();
+            } else {
+                recommend();
+            }
+        }
+    }, 1000);
 };
 
 //-------------------- Pomomdoro Code -----------------------------------------------------------//
@@ -266,6 +262,6 @@ $(document).ready(function () {
         $("title").text("Pomodorino (PAUSED)");
         $("#time").text("PAUSED");
     });
-    
+
     $("#time").text(secToMin(pomodorinoValue));
 });
