@@ -35,17 +35,63 @@ var strict = false;
 
 var populateSettings = function () {
     "use strict";
-    $("#setPom").attr("value", pomodorinoValue / 60);
-    $("#setShort").attr("value", shortBreakValue / 60);
-    $("#setLong").attr("value", longBreakValue / 60);
+    $("#setPom").val(pomodorinoValue / 60);
+    $("#setShort").val(shortBreakValue / 60);
+    $("#setLong").val(longBreakValue / 60);
     if (strict) {
         $("#setStrict").attr("checked", "checked");
+    } else {
+        $("#setStrict").removeAttr("checked");
     }
 };
 
 $(document).ready(function () {
     "use strict";
     populateSettings();
+});
+
+var toNumber = function (number) {
+    "use strict";
+    var n = parseInt(number, 10);
+    if (n !== n) { // Recommended by MDN in place of isNaN(), until Number.isNaN() is widely implemented
+        return "NaN";
+    }
+    return minToSec(n);
+};
+
+var saveSettings = function () {
+    "use strict";
+    var userPomodorinoValue = toNumber($("#setPom").val()),
+        userShortBreakValue = toNumber($("#setShort").val()),
+        userLongBreakValue = toNumber($("#setLong").val());
+
+    if (userPomodorinoValue === "NaN" || userPomodorinoValue <= 0) {
+        pomodorinoValue = 1500;
+    } else {
+        pomodorinoValue = userPomodorinoValue;
+    }
+
+    if (userShortBreakValue === "NaN" || userShortBreakValue <= 0) {
+        shortBreakValue = 300;
+    } else {
+        shortBreakValue = userShortBreakValue;
+    }
+
+    if (userLongBreakValue === "NaN" || userLongBreakValue <= 0) {
+        longBreakValue = 900;
+    } else {
+        longBreakValue = userLongBreakValue;
+    }
+
+    strict = $("#setStrict").prop("checked");
+
+    populateSettings();
+};
+
+// Save settings on modal close
+$(document).on('close', '[data-reveal]', function () {
+    "use strict";
+    saveSettings();
 });
 
 //-------------------- Pomodorino Recommendation Code -------------------------------------------//
@@ -108,7 +154,11 @@ var timer = function () {
     if (counter === 0) {
         stopTimer();
         document.getElementById("alarm").play();
-        recommend();
+        if (strict && !isPom) {
+            pomodorino();
+        } else {
+            recommend();
+        }
     }
 };
 
@@ -153,8 +203,6 @@ var longBreak = function () {
     isPom = false;
 };
 
-//-------------------- User Interaction Code ----------------------------------------------------//
-
 $(document).ready(function () {
     "use strict";
     $("#pomodorino").click(function () {
@@ -184,4 +232,6 @@ $(document).ready(function () {
         $("title").text("Pomodorino (PAUSED)");
         $("#time").text("PAUSED");
     });
+    
+    $("#time").text(secToMin(pomodorinoValue));
 });
