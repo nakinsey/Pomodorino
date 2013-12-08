@@ -9,17 +9,8 @@ This productivity technique breaks up daunting work into easy 25 minute chunks c
 In this light-weight flavor of the timer, a pomodoro will be refered to as a pomodorino. Additionally, the plural form of the word is "pomodorini."
 
 ## Current Development Goals:
-Our current over-arching development goal is user customization. This will be achieved by:
-- [x] Allowing custom time values to be used in the `pomodorino()`, `shortBreak()`, and `longBreak()` functions.
-- [x] Creating a "strict mode" that automatically starts a Pomodorino after a break.
-- [] Remembering the user's customizations for the next visit.
- - [x] Changes will be saved when the modal closes. Foundation fires an event that we can use for this.
+Changes are being pushed to the gh-pages branch for testing. Version 2 will be released promptly.
 
-[x] Denotes a completed goal
-
-We want the app to look similar to this mockup when released:
-
-![alt text](https://raw.github.com/cosmicauma31/Pomodorino/master/img/Pomodorino.png "Pomodorino Mockup")
 ## Technologies Used
 This web application is crafted out of the following:
 - HTML

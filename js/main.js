@@ -33,6 +33,27 @@ var shortBreakValue = 300; // 5 Minutes
 var longBreakValue = 900; // 15 Minutes
 var strict = false;
 
+
+$(document).ready(function () {
+    "use strict";
+    var custom = localStorage.getItem("custom");
+    if (custom === "true") {
+        var getPomodorino = localStorage.getItem("pomodorino");
+        pomodorinoValue = parseInt(getPomodorino, 10);
+        
+        var getShortBreak = localStorage.getItem("shortBreak");
+        shortBreakValue = parseInt(getShortBreak, 10);
+        
+        var getLongBreak = localStorage.getItem("longBreak");
+        longBreakValue = parseInt(getLongBreak, 10);
+        
+        var getStrict = localStorage.getItem("strict");
+        if (getStrict === "true") {
+            strict = true;
+        }
+    }
+});
+
 var populateSettings = function () {
     "use strict";
     $("#setPom").val(pomodorinoValue / 60);
@@ -67,24 +88,37 @@ var saveSettings = function () {
 
     if (userPomodorinoValue === "NaN" || userPomodorinoValue <= 0) {
         pomodorinoValue = 1500;
+        localStorage.setItem("pomodorino", "1500");
     } else {
         pomodorinoValue = userPomodorinoValue;
+        localStorage.setItem("pomodorino", userPomodorinoValue);
     }
 
     if (userShortBreakValue === "NaN" || userShortBreakValue <= 0) {
         shortBreakValue = 300;
+        localStorage.setItem("shortBreak", "300");
     } else {
         shortBreakValue = userShortBreakValue;
+        localStorage.setItem("shortBreak", userShortBreakValue);
     }
 
     if (userLongBreakValue === "NaN" || userLongBreakValue <= 0) {
         longBreakValue = 900;
+        localStorage.setItem("longBreak", "900");
     } else {
         longBreakValue = userLongBreakValue;
+        localStorage.setItem("longBreak", userLongBreakValue);
     }
 
     strict = $("#setStrict").prop("checked");
+    if (strict) {
+        localStorage.setItem("strict", "true");
+    } else {
+        localStorage.setItem("strict", "false");
+    }
 
+    localStorage.setItem("custom", "true");
+    
     populateSettings();
 };
 
