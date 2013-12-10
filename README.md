@@ -9,7 +9,18 @@ This productivity technique breaks up daunting work into easy 25 minute chunks c
 In this light-weight flavor of the timer, a pomodoro will be refered to as a pomodorino. Additionally, the plural form of the word is "pomodorini."
 
 ## Current Development Goals:
-Changes are being pushed to the gh-pages branch for testing. Version 2 will be released promptly.
+Since the core functionality has been completed, our goals will be scattered and be more of an embellishment. They go as follows:
+- [x] Add HTML5 notifications
+- [] Create an Apple touch icon, favicon, and icon for the notification
+- [x] JavaScript must pass JSHint
+- [x] Download a smaller version of Foundation, only including the features that we use
+- [x] Change sprites.png to be #222 (match text color)
+- [x] Create a progress bar
+- [x] Turn the help panel into an accordion
+- [] Make a tour of the app, using Foundation's Joyride
+- [x] Revert to default if a time value is one hour or larger.
+
+[x] Denotes a completed goal
 
 ## Technologies Used
 This web application is crafted out of the following:
@@ -17,6 +28,7 @@ This web application is crafted out of the following:
 - CSS
 - JavaScript
  - jQuery
+ - notify.js
 - Foundation Framework
 
 ## Licensing

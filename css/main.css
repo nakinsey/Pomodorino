@@ -30,6 +30,15 @@ button {
     -o-transition: box-shadow 1s ease;
     transition: box-shadow 1s ease;
 }
+.progress {
+    margin-top: 2em;
+}
+.meter {
+    -webkit-transition: width 1s linear;
+    -moz-transition: width 1s linear;
+    -o-transition: width 1s linear;
+    transition: width 1s linear;
+}
 /*---------- Settings & Help ----------*/
 
 [class*="icon-"] {
@@ -78,5 +87,8 @@ label {
     button {
         margin-bottom: 0;
         width: 75%;
+    }
+    .progress {
+        margin-top: 1em;
     }
 }

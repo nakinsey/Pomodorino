@@ -39,6 +39,10 @@
             <div class="time row">
                 <div id="time">25:00</div>
             </div>
+            
+            <div class="progress row small-8 large-5 round">
+                <span class="meter" style="width: 0%"></span>
+            </div>
 
             <div class="text-center row">
                 <div class="counter" id="count1"></div>
@@ -56,9 +60,9 @@
 
     <!----------------- Modals ------------------------------------------------------------------->
 
-    <div id="settings" class="reveal-modal" data-reveal>
-        <form data-abide class="row">
-
+    <div id="settings" class="reveal-modal text-center" data-reveal>
+        <h2>Settings</h2>
+        <div class="row">
             <fieldset>
                 <legend>In Whole Minutes and Less Than One Hour</legend>
 
@@ -77,17 +81,21 @@
                     <input id="setLong" type="number">
                 </div>
             </fieldset>
+        </div>
 
-        </form>
-
-        <div class="row text-center">
+        <div class="row">
             <label for="setStrict">Use Strict Mode</label>
             <input id="setStrict" type="checkbox">
             <div class="icon-question has-tip" data-tooltip title="Automatically starts a pomodorino after a break"></div>
         </div>
 
-        <div class="row text-center">
-            <div class="panel callout">
+        <div class="row show-for-medium-up">
+            <button id="notify">ENABLE NOTIFICATIONS</button>
+            <p>Desktop notifications may not work in all browsers</p>
+        </div>
+
+        <div class="row">
+            <div class="panel">
                 Changes are automatically saved.
             </div>
         </div>
@@ -102,24 +110,35 @@
         </h1>
         <hr>
 
+        <dl class="accordion" data-accordion>
+            <dd>
+                <a href="#panel1">About Pomodorino</a>
+                <div id="panel1" class="content active">
+                    <p>Pomodorino is a Pomodoro timer that stresses simplicity and functionality. The timer is based off of <a href="http://pomodorotechnique.com">the Pomodoro Technique</a> which was created by Francesco Cirillo. Its name comes from the Italian word for small tomato, as it is a light-weight version of the installable variations that circulate the web today.</p>
+                    <div class="text-center">
+                        <button id="tour">TAKE A TOUR</button>
+                    </div>
+                </div>
 
-        <h2>About Pomodorino</h2>
-        <p>Pomodorino is a Pomodoro timer that stresses simplicity and functionality. The timer is based off of <a href="http://pomodorotechnique.com">the Pomodoro Technique</a> which was created by Francesco Cirillo. Its name comes from the Italian word for small tomato, as it is a light-weight version of the installable variations that circulate the web today.</p>
+                <a href="#panel2">How to Use the Timer</a>
+                <div id="panel2" class="content">
+                    <p>The Pomodorino timer separates intimidating heaps of work into smaller, more manageable chunks. It does this by having you do a pomodorino, a 25 minute session of undistracted work. These are promptly followed by a five-minute break. For every four pomodorini (plural), you are rewarded with a longer 15 minute break.</p>
 
+                    <p>Pomodorino offers unique functionality that makes it more convenient than a simple kitchen timer. These features include:</p>
+                    <ul>
+                        <li>Starting a pomodorino, short break, and long break all with the press of a button</li>
+                        <li>Circles under the remaining time fill in after each pomodorino. They count four at a time to show how many more are needed for a long break.</li>
+                        <li>The timer automatically recommends the next course of action, so you always know when relax and when to work. The recommendations are denoted by a green glow around the recommended button.</li>
+                        <li>This web app works on desktops, laptops, tablets, and phones. Pomodorino is always there when you need it.</li>
+                    </ul>
+                </div>
 
-        <h2>How to Use the Timer</h2>
-        <p>The Pomodorino timer separates intimidating heaps of work into smaller, more manageable chunks. It does this by having you do a pomodorino, a 25 minute session of undistracted work. These are promptly followed by a five-minute break. For every four pomodorini (plural), you are rewarded with a longer 15 minute break.</p>
-
-        <p>Pomodorino offers unique functionality that makes it more convenient than a simple kitchen timer. These features include:</p>
-        <ul>
-            <li>Starting a pomodorino, short break, and long break all with the press of a button</li>
-            <li>Circles under the remaining time fill in after each pomodorino. They count four at a time to show how many more are needed for a long break.</li>
-            <li>The timer automatically recommends the next course of action, so you always know when relax and when to work. The recommendations are denoted by a green glow around the recommended button.</li>
-            <li>This web app works on desktops, laptops, tablets, and phones. Pomodorino is always there when you need it.</li>
-        </ul>
-
-        <h2>Licensing</h2>
-        <p>Pomodorino, jQuery, Modernizr, and the Foundation UI framework all use the business friendly <a href="http://opensource.org/licenses/MIT">MIT license.</a> Also, you can <a href="https://github.com/cosmicauma31/Pomodorino"> view the source code on our GitHub repo</a>.</p>
+                <a href="#panel3">Licensing</a>
+                <div id="panel3" class="content">
+                    <p>Pomodorino, jQuery, Modernizr, notify.js, and the Foundation UI framework all use the business friendly <a href="http://opensource.org/licenses/MIT">MIT license.</a> Also, you can <a href="https://github.com/cosmicauma31/Pomodorino">view the source code on our GitHub repo</a>.</p>
+                </div>
+            </dd>
+        </dl>
 
         <a class="close-reveal-modal">&#215;</a>
     </div>
@@ -131,6 +150,7 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
+    <script src="js/notify.min.js"></script>
     <script src="js/main.js"></script>
     <script>
         $(document).foundation();

@@ -1,12 +1,14 @@
 /* ==========================================================================
    Released Under the MIT Licence -- http://opensource.org/licenses/MIT
    ========================================================================== */
+/*jslint browser:true*/
+/*global $, Notify*/
 /*jshint camelcase:true, curly:true, eqeqeq:true, freeze:true, newcap:true, quotmark:double, strict:true, trailing:true, browser:true, jquery:true*/
 
-var minutes, second, seconds; // "second" is the interval and "seconds" is part of the secToMin(); function
+var initValue, minutes, second, seconds; // "second" is the interval and "seconds" is part of the secToMin(); function
 var counter = 1500;
 
-//-------------------- Time Unit Conversion Code ------------------------------------------------//
+//-------------------- Time Unit Conversion -----------------------------------------------------//
 
 var secToMin = function (input) {
     "use strict";
@@ -27,7 +29,7 @@ var minToSec = function (input) {
     return input * 60;
 };
 
-//-------------------- Settings Code ------------------------------------------------------------//
+//-------------------- Settings -----------------------------------------------------------------//
 
 var pomodorinoValue = 1500; // 25 Minutes
 var shortBreakValue = 300; // 5 Minutes
@@ -85,7 +87,7 @@ var saveSettings = function () {
         userShortBreakValue = toNumber($("#setShort").val()),
         userLongBreakValue = toNumber($("#setLong").val());
 
-    if (userPomodorinoValue === "NaN" || userPomodorinoValue <= 0) {
+    if (userPomodorinoValue === "NaN" || userPomodorinoValue <= 0 || userPomodorinoValue >= 3600) {
         pomodorinoValue = 1500;
         localStorage.setItem("pomodorino", "1500");
     } else {
@@ -93,7 +95,7 @@ var saveSettings = function () {
         localStorage.setItem("pomodorino", userPomodorinoValue);
     }
 
-    if (userShortBreakValue === "NaN" || userShortBreakValue <= 0) {
+    if (userShortBreakValue === "NaN" || userShortBreakValue <= 0 || userShortBreakValue >= 3600) {
         shortBreakValue = 300;
         localStorage.setItem("shortBreak", "300");
     } else {
@@ -101,7 +103,7 @@ var saveSettings = function () {
         localStorage.setItem("shortBreak", userShortBreakValue);
     }
 
-    if (userLongBreakValue === "NaN" || userLongBreakValue <= 0) {
+    if (userLongBreakValue === "NaN" || userLongBreakValue <= 0 || userLongBreakValue >= 3600) {
         longBreakValue = 900;
         localStorage.setItem("longBreak", "900");
     } else {
@@ -127,7 +129,33 @@ $(document).on("close", "[data-reveal]", function () {
     saveSettings();
 });
 
-//-------------------- Pomodorino Recommendation Code -------------------------------------------//
+//-------------------- Desktop Notifications ----------------------------------------------------//
+
+var permission = false;
+
+var havePermission = function () {
+    "use strict";
+    permission = true;
+};
+
+var breakEnd = new Notify("Pomodorino", {
+    body: "Time to get back to work!"
+});
+var pomodorinoEnd = new Notify("Pomodorino", {
+    body: "Take a break; you earned it!",
+    permissionGranted: havePermission
+});
+
+$(document).ready(function () {
+    "use strict";
+    $("#notify").click(function () {
+        if (pomodorinoEnd.needsPermission()) {
+            pomodorinoEnd.requestPermission();
+        }
+    });
+});
+
+//-------------------- Pomodorino Recommendation ------------------------------------------------//
 
 var isPom = false;
 var pomCount = 0;
@@ -136,6 +164,9 @@ var recommend = function () {
     "use strict";
     if (isPom) {
         pomCount += 1;
+        pomodorinoEnd.show();
+    } else {
+        breakEnd.show();
     }
 
     if (isPom && pomCount === 4) {
@@ -166,13 +197,26 @@ var clearRecommendation = function () {
     "use strict";
     $(".recommended").removeClass("recommended");
 };
-//-------------------- Timer Code ---------------------------------------------------------------//
+
+//-------------------- Progress Bar -------------------------------------------------------------//
+
+var progress = function () {
+    "use strict";
+    var bar = counter / initValue;
+    bar = (1 - bar) * 100;
+    String(bar);
+    bar = bar + "%";
+    $(".meter").css("width", bar);
+};
+
+//-------------------- Timer --------------------------------------------------------------------//
 
 var printOut = function () {
     "use strict";
     var currentTime = secToMin(counter);
     $("title").text("Pomodorino (" + currentTime + ")");
     $("#time").text(currentTime);
+    progress();
 };
 
 var stopTimer = function () {
@@ -198,12 +242,13 @@ var startTimer = function () {
     }, 1000);
 };
 
-//-------------------- Pomomdoro Code -----------------------------------------------------------//
+//-------------------- Pomomdoro ----------------------------------------------------------------//
 
 var pomodorino = function () {
     "use strict";
     clearRecommendation();
     counter = pomodorinoValue;
+    initValue = pomodorinoValue;
     printOut();
     startTimer();
     $("#start").addClass("hide");
@@ -215,6 +260,7 @@ var shortBreak = function () {
     "use strict";
     clearRecommendation();
     counter = shortBreakValue;
+    initValue = shortBreakValue;
     printOut();
     startTimer();
     $("#start").addClass("hide");
@@ -226,6 +272,7 @@ var longBreak = function () {
     "use strict";
     clearRecommendation();
     counter = longBreakValue;
+    initValue = longBreakValue;
     printOut();
     startTimer();
     $("#start").addClass("hide");
@@ -242,13 +289,9 @@ $(document).ready(function () {
     });
     $("#sb").click(function () {
         shortBreak();
-        document.getElementById("alarm").play();
-        document.getElementById("alarm").pause();
     });
     $("#lb").click(function () {
         longBreak();
-        document.getElementById("alarm").play();
-        document.getElementById("alarm").pause();
     });
     $("#start").click(function () {
         startTimer();
@@ -264,4 +307,14 @@ $(document).ready(function () {
     });
 
     $("#time").text(secToMin(pomodorinoValue));
+});
+
+//-------------------- Tour (Joyride) -----------------------------------------------------------//
+
+$(document).ready(function () {
+    "use strict";
+    $("#tour").click(function () {
+        $("#help").foundation("reveal", "close");
+        $(document).foundation("joyride", "start");
+    });
 });
