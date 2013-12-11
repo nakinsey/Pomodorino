@@ -233,10 +233,10 @@ var startTimer = function () {
         if (counter === 0) {
             stopTimer();
             document.getElementById("alarm").play();
+            recommend();
             if (strict && !isPom) {
+                $(".recommended").removeClass("recommended");
                 pomodorino();
-            } else {
-                recommend();
             }
         }
     }, 1000);

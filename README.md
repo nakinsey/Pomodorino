@@ -17,8 +17,10 @@ Since the core functionality has been completed, our goals will be scattered and
 - [x] Change sprites.png to be #222 (match text color)
 - [x] Create a progress bar
 - [x] Turn the help panel into an accordion
-- [] Make a tour of the app, using Foundation's Joyride
-- [x] Revert to default if a time value is one hour or larger.
+- [x] Make a tour of the app, using Foundation's Joyride
+- [x] Revert to default if a time value is one hour or larger
+- [] Create a new alarm noise (current one is from the web)
+- [x] Fix bug that causes the counter dots to malfunction in strict mode
 
 [x] Denotes a completed goal
 

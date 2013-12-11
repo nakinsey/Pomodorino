@@ -17,7 +17,7 @@
 <body>
     <div class="large-12 columns">
         <div class="row">
-            <div class="icon-cog" data-reveal-id="settings"></div>
+            <div class="icon-cog" id="cog" data-reveal-id="settings"></div>
             <div class="icon-question" data-reveal-id="help"></div>
         </div>
 
@@ -147,6 +147,29 @@
         <source src="alarm.mp3" type="audio/mpeg" />
         <source src="alarm.ogg" type="audio/ogg" />Your browser does not support this audio format.
     </audio>
+    
+    <!----------------- Tour (Joyride) ----------------------------------------------------------->
+    
+    <ol class="joyride-list" data-joyride>
+        <li data-id="pomodorino" data-text="Next">
+            <p>Daunting tasks become manageable by having you do a pomodorino, a 25 minute session of undistracted work.</p>
+        </li>
+        <li data-id="sb" data-text="Next">
+            <p>These are promptly followed by a five-minute break.</p>
+        </li>
+        <li data-id="lb" data-text="Next">
+            <p>For every four pomodorini (plural), you are rewarded with a longer 15 minute break.</p>
+        </li>
+        <li data-id="count1" data-text="Next">
+            <p>These circles fill in after a pomodorino, indicating the amount of pomodorini left until a long break.</p>
+        </li>
+        <li data-id="cog" data-text="Next">
+            <p>The settings allow you to change time values and enable strict mode.</p>
+        </li>
+        <li data-text="End">
+            <p>A button will glow green when it is the recommended course of action. Read the help panel for more information.</p>
+        </li>
+    </ol>
 
     <script src="js/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
