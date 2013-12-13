@@ -11,7 +11,7 @@ In this light-weight flavor of the timer, a pomodoro will be refered to as a pom
 ## Current Development Goals:
 Since the core functionality has been completed, our goals will be scattered and be more of an embellishment. They go as follows:
 - [x] Add HTML5 notifications
-- [] Create an Apple touch icon, favicon, and icon for the notification
+- [x] Create an Apple touch icon, favicon, and icon for the notification
 - [x] JavaScript must pass JSHint
 - [x] Download a smaller version of Foundation, only including the features that we use
 - [x] Change sprites.png to be #222 (match text color)

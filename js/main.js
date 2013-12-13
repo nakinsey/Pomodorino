@@ -139,10 +139,12 @@ var havePermission = function () {
 };
 
 var breakEnd = new Notify("Pomodorino", {
-    body: "Time to get back to work!"
+    body: "Time to get back to work!",
+    icon: "img/icon.png"
 });
 var pomodorinoEnd = new Notify("Pomodorino", {
     body: "Take a break; you earned it!",
+    icon: "img/icon.png",
     permissionGranted: havePermission
 });
 
