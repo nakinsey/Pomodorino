@@ -191,8 +191,10 @@ var recommend = function () {
     } else {
         $(".counter").css("background-color", "#fff");
     }
-
-    isPom = false;
+    
+    if (!strict) {
+        isPom = false;
+    }
 };
 
 var clearRecommendation = function () {
