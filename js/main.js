@@ -191,7 +191,7 @@ var recommend = function () {
     } else {
         $(".counter").css("background-color", "#fff");
     }
-    
+
     if (!strict) {
         isPom = false;
     }
@@ -246,6 +246,13 @@ var startTimer = function () {
     }, 1000);
 };
 
+var loadAudio = function () { // Media only loads on a click for mobile browsers
+    "use strict";
+    document.getElementById("alarm").play();
+    document.getElementById("alarm").pause();
+    $("#pomodorino").removeAttr("onclick"); // Prevent ringing on subsequent presses
+};
+
 //-------------------- Pomomdoro ----------------------------------------------------------------//
 
 var pomodorino = function () {
@@ -288,8 +295,6 @@ $(document).ready(function () {
     "use strict";
     $("#pomodorino").click(function () {
         pomodorino();
-        document.getElementById("alarm").play(); // Media only loads on a click for mobile browsers
-        document.getElementById("alarm").pause();
     });
     $("#sb").click(function () {
         shortBreak();
