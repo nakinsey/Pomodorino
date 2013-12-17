@@ -7,9 +7,12 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>Pomodorino Timer</title>
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-startup-image" href="img/splash.png">
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="shortcut icon" sizes="196x196" href="img/icon.png">
     <link rel="icon" sizes="196x196" href="img/icon.png" />
@@ -29,7 +32,7 @@
             <div class="row">
                 <ul class="large-block-grid-3 medium-block-grid-3 small-block-grid-1">
                     <li>
-                        <button id="pomodorino" class="recommended">POMODORINO</button>
+                        <button id="pomodorino" class="recommended" onclick="loadAudio();">POMODORINO</button>
                     </li>
                     <li>
                         <button id="sb">SHORT BREAK</button>
@@ -139,7 +142,7 @@
 
                 <a href="#panel3">Licensing</a>
                 <div id="panel3" class="content">
-                    <p>Pomodorino, jQuery, Modernizr, notify.js, and the Foundation UI framework all use the business friendly <a href="http://opensource.org/licenses/MIT">MIT license.</a> Also, you can <a href="https://github.com/cosmicauma31/Pomodorino">view the source code on our GitHub repo</a>. The Pomodorino logo and favicon are derivative works of a <a href="http://creativecommons.org/licenses/by/2.0/deed.en">CC 2.0 licenced</a> photo by xlibber on Flickr.</p>
+                    <p>Pomodorino, jQuery, Modernizr, notify.js, and the Foundation UI framework all use the business friendly <a href="http://opensource.org/licenses/MIT">MIT license.</a> Also, you can <a href="https://github.com/cosmicauma31/Pomodorino">view the source code on our GitHub repo</a>. The Pomodorino logo and favicon are derivative works of a <a href="http://creativecommons.org/licenses/by/2.0/deed.en">Creative Commons 2.0 licenced</a> photo by xlibber on Flickr.</p>
                 </div>
             </dd>
         </dl>
