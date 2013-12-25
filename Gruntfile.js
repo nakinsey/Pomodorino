@@ -29,7 +29,7 @@ module.exports = function (grunt) {
 
         uglify: {
             options: {
-                banner: '/*! Pomodorino Uses the MIT Licence */'
+                banner: '/*! Pomodorino Uses the MIT Licence */\n'
             },
             build: {
                 files: {
@@ -51,7 +51,10 @@ module.exports = function (grunt) {
 
     });
 
-    require('load-grunt-tasks')(grunt);
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     grunt.registerTask('default', ['cssmin', 'concat', 'uglify', 'imagemin']);
 

@@ -1,14 +1,18 @@
 {
-  "name": "Pomodorino",
-  "version": "3.2.0",
-  "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-imagemin": "~0.4.0",
-    "grunt-contrib-cssmin": "~0.7.0"
-  },
-  "dependencies": {
-    "load-grunt-tasks": "~0.2.0"
-  }
+    "name": "Pomodorino",
+    "version": "3.4.0",
+    "description": "A light-weight Pomodoro timer",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cosmicauma31/Pomodorino.git"
+    },
+    "author": "Nathan Kinsey",
+    "license": "MIT",
+    "dependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-uglify": "~0.2.7",
+        "grunt-contrib-concat": "~0.3.0",
+        "grunt-contrib-imagemin": "~0.4.0",
+        "grunt-contrib-cssmin": "~0.7.0"
+    }
 }
