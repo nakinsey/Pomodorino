@@ -9,7 +9,7 @@ This productivity technique breaks up daunting work into easy 25 minute chunks c
 In this light-weight flavor of the timer, a pomodoro will be refered to as a pomodorino. Additionally, the plural form of the word is "pomodorini."
 
 ## Current Development Goals:
-Development has ended. Pull requests and issues **will** be responded to.
+Development has ended. Pull requests and issues **will not** be responded to.
 
 ## Technologies Used
 This web application is crafted out of the following:
